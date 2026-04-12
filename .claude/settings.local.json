@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(chmod +x:*)",
+      "Bash(bash:*)",
+      "WebSearch",
+      "Bash(grep -rl \"reload\" ~/.claude/plugins/marketplaces/claude-plugins-official/plugins/*/ --include=\"*.json\" --include=\"*.md\" -l)"
+    ]
+  }
+}
