@@ -39,4 +39,16 @@ for bat in "$SCRIPT_DIR"/*.bat; do
   fi
 done
 
+# Windows PATH에 ~/bin 등록 (없으면 추가)
+if [[ "$OS" == "Windows_NT" ]]; then
+  WIN_TARGET="C:\\Users\\$USERNAME\\bin"
+  CURRENT_PATH=$(powershell -Command "[Environment]::GetEnvironmentVariable('Path', 'User')")
+  if echo "$CURRENT_PATH" | grep -qi "$(echo "$WIN_TARGET" | sed 's/\\/\\\\/g')"; then
+    echo "[skip] PATH에 $WIN_TARGET 이미 등록됨"
+  else
+    powershell -Command "[Environment]::SetEnvironmentVariable('Path', [Environment]::GetEnvironmentVariable('Path', 'User') + ';$WIN_TARGET', 'User')"
+    echo "[done] PATH에 $WIN_TARGET 추가 (새 터미널에서 적용)"
+  fi
+fi
+
 echo "=== 설치 완료 ==="
