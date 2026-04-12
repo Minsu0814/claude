@@ -1,5 +1,6 @@
 #!/bin/bash
-RESEARCH_DIR="/d/Folder/Research"
+DRIVE="${0:1:1}"
+RESEARCH_DIR="/${DRIVE}/Folder/Research"
 
 selected=$(ls "$RESEARCH_DIR" | fzf --height 40% --reverse --prompt="연구 프로젝트 선택: ")
 

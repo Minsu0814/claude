@@ -1,5 +1,6 @@
 #!/bin/bash
-CURRENT="/d/Folder"
+DRIVE="${0:1:1}"
+CURRENT="/${DRIVE}/Folder"
 
 while true; do
     echo ""

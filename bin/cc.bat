@@ -1,6 +1,6 @@
 @echo off
 setlocal enabledelayedexpansion
-set "CURRENT=D:\Folder"
+set "CURRENT=%~d0\Folder"
 
 :LOOP
 echo.

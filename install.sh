@@ -1,6 +1,6 @@
 #!/bin/bash
 # Claude Master Installer
-# D:/Folder/claude/ 하위의 모든 컴포넌트(install.sh가 있는 디렉토리)를 자동 발견·설치
+# {드라이브}:/Folder/claude/ 하위의 모든 컴포넌트(install.sh가 있는 디렉토리)를 자동 발견·설치
 # 사용법:
 #   bash install.sh           → 전역 설치 (~/.claude/)
 #   bash install.sh --local   → 현재 프로젝트에 설치 (./.claude/)

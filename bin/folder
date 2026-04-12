@@ -1,5 +1,6 @@
 #!/bin/bash
-BASE_DIR="/d/Folder"
+DRIVE="${0:1:1}"
+BASE_DIR="/${DRIVE}/Folder"
 
 selected=$(ls "$BASE_DIR" | fzf --height 40% --reverse --prompt="Open folder: ")
 
