@@ -1,0 +1,19 @@
+#!/bin/bash
+CURRENT="/d/Folder"
+
+while true; do
+    echo ""
+    echo "  [$CURRENT]"
+    selected=$( (echo "[START]"; echo ".."; ls -d "$CURRENT"/*/ 2>/dev/null | xargs -I{} basename {}) | fzf --height 40% --reverse --prompt="Claude Code: ")
+
+    [ -z "$selected" ] && break
+
+    if [ "$selected" = "[START]" ]; then
+        cd "$CURRENT" && claude --dangerously-skip-permissions
+        break
+    elif [ "$selected" = ".." ]; then
+        CURRENT=$(dirname "$CURRENT")
+    else
+        CURRENT="$CURRENT/$selected"
+    fi
+done

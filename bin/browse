@@ -1,0 +1,19 @@
+#!/bin/bash
+CURRENT="/d/Folder"
+
+while true; do
+    echo ""
+    echo "  [$CURRENT]"
+    selected=$( (echo ">>> OPEN <<<"; echo ".."; ls -d "$CURRENT"/*/ 2>/dev/null | xargs -I{} basename {}) | fzf --height 40% --reverse --prompt="Browse: ")
+
+    [ -z "$selected" ] && break
+
+    if [ "$selected" = ">>> OPEN <<<" ]; then
+        explorer "$(cygpath -w "$CURRENT")"
+        break
+    elif [ "$selected" = ".." ]; then
+        CURRENT=$(dirname "$CURRENT")
+    else
+        CURRENT="$CURRENT/$selected"
+    fi
+done

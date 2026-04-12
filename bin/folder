@@ -1,0 +1,8 @@
+#!/bin/bash
+BASE_DIR="/d/Folder"
+
+selected=$(ls "$BASE_DIR" | fzf --height 40% --reverse --prompt="Open folder: ")
+
+if [ -n "$selected" ]; then
+    explorer "$BASE_DIR/$selected"
+fi

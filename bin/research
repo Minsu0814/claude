@@ -1,0 +1,8 @@
+#!/bin/bash
+RESEARCH_DIR="/d/Folder/Research"
+
+selected=$(ls "$RESEARCH_DIR" | fzf --height 40% --reverse --prompt="연구 프로젝트 선택: ")
+
+if [ -n "$selected" ]; then
+    code "$RESEARCH_DIR/$selected"
+fi
