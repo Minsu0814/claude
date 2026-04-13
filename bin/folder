@@ -1,8 +1,0 @@
-#!/bin/bash
-BASE_DIR="${CLAUDE_BASE:-/d/Folder}"
-
-selected=$(ls "$BASE_DIR" | fzf --height 40% --reverse --prompt="Open folder: ")
-
-if [ -n "$selected" ]; then
-    explorer "$(cygpath -w "$BASE_DIR/$selected")"
-fi
