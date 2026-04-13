@@ -1,6 +1,5 @@
 #!/bin/bash
-DRIVE="${0:1:1}"
-CURRENT="/${DRIVE}/Folder"
+CURRENT="${CLAUDE_BASE:-/d/Folder}"
 
 while true; do
     echo ""

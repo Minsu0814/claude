@@ -1,6 +1,6 @@
 @echo off
 setlocal enabledelayedexpansion
-set "CURRENT=%~d0\Folder"
+if defined CLAUDE_BASE (set "CURRENT=%CLAUDE_BASE%") else (set "CURRENT=D:\Folder")
 
 :LOOP
 echo.

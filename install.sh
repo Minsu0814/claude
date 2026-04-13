@@ -7,6 +7,30 @@
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
+# CLAUDE_BASE 설정 — 없으면 사용자에게 물어보고 ~/.bashrc에 등록
+if [ -z "$CLAUDE_BASE" ]; then
+  echo ""
+  echo "CLAUDE_BASE가 설정되지 않았습니다."
+  echo "작업 폴더 경로를 입력하세요 (예: /d/Folder, /e/Projects)"
+  read -rp "> " INPUT_BASE
+  CLAUDE_BASE="${INPUT_BASE:-/d/Folder}"
+
+  # ~/.bashrc에 등록
+  RCFILE="$HOME/.bashrc"
+  if ! grep -q "CLAUDE_BASE" "$RCFILE" 2>/dev/null; then
+    echo "export CLAUDE_BASE=\"$CLAUDE_BASE\"" >> "$RCFILE"
+    echo "[done] ~/.bashrc에 CLAUDE_BASE=\"$CLAUDE_BASE\" 등록 완료"
+  fi
+
+  # Windows 환경이면 시스템 환경변수에도 등록
+  if [[ "$OS" == "Windows_NT" ]]; then
+    WIN_PATH="$(cygpath -w "$CLAUDE_BASE" 2>/dev/null || echo "$CLAUDE_BASE")"
+    powershell -Command "[Environment]::SetEnvironmentVariable('CLAUDE_BASE', '$WIN_PATH', 'User')"
+    echo "[done] Windows 환경변수에 CLAUDE_BASE=\"$WIN_PATH\" 등록 완료"
+  fi
+fi
+export CLAUDE_BASE
+
 # Parse --local flag
 LOCAL_FLAG=""
 if [ "$1" = "--local" ]; then
