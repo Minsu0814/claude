@@ -63,6 +63,12 @@ hooks 설정 상세:
 - 일이 꼬이면 즉시 멈추고 re-plan
 - Git: Conventional commits (feat:, fix:, docs:, refactor:)
 
+## Karpathy 코딩 원칙
+- **Think Before Coding**: 코드 전에 무엇을, 왜 하는지 명확히. 복잡하면 계획부터.
+- **Simplicity First**: 가장 단순한 해결책 우선. 불필요한 추상화 금지. YAGNI.
+- **Surgical Changes**: 최소한의 정확한 변경. 관련 없는 코드 건드리지 않기. 리팩토링과 기능 추가 분리.
+- **Goal-Driven Execution**: 목표에 기여하는 변경만. 옆길로 새면 즉시 멈추고 복귀.
+
 ## Notes 디렉토리
 - 작업/기능마다 `notes/` 디렉토리를 유지할 것
 - 작업 중 발견한 내용, 의사결정 이유, 삽질 로그 등을 기록
