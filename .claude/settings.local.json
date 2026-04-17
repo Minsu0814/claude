@@ -5,7 +5,12 @@
       "Bash(chmod +x:*)",
       "Bash(bash:*)",
       "WebSearch",
-      "Bash(grep -rl \"reload\" ~/.claude/plugins/marketplaces/claude-plugins-official/plugins/*/ --include=\"*.json\" --include=\"*.md\" -l)"
+      "Bash(grep -rl \"reload\" ~/.claude/plugins/marketplaces/claude-plugins-official/plugins/*/ --include=\"*.json\" --include=\"*.md\" -l)",
+      "Bash(rm -r ~/.claude/skills/init-project)",
+      "Bash(ln -s \"D:/Folder/claude/claude-toolkit/skills/init-project/\" ~/.claude/skills/init-project)",
+      "Read(//c/Users/alstn/.claude/skills/**)",
+      "Bash(rm -r ~/.claude/skills/commit-push)",
+      "Bash(ln -s \"D:/Folder/claude/claude-toolkit/skills/commit-push/\" ~/.claude/skills/commit-push)"
     ]
   }
 }
