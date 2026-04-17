@@ -10,7 +10,11 @@
       "Bash(ln -s \"D:/Folder/claude/claude-toolkit/skills/init-project/\" ~/.claude/skills/init-project)",
       "Read(//c/Users/alstn/.claude/skills/**)",
       "Bash(rm -r ~/.claude/skills/commit-push)",
-      "Bash(ln -s \"D:/Folder/claude/claude-toolkit/skills/commit-push/\" ~/.claude/skills/commit-push)"
+      "Bash(ln -s \"D:/Folder/claude/claude-toolkit/skills/commit-push/\" ~/.claude/skills/commit-push)",
+      "Bash(rm -r ~/.claude/skills/init-project ~/.claude/skills/commit-push ~/.claude/skills/karpathy-guidelines)",
+      "Bash(ln -s \"D:/Folder/claude/claude-toolkit/skills/init-project\" ~/.claude/skills/init-project)",
+      "Bash(ln -s \"D:/Folder/claude/claude-toolkit/skills/commit-push\" ~/.claude/skills/commit-push)",
+      "Bash(ln -s \"D:/Folder/claude/claude-toolkit/skills/karpathy-guidelines\" ~/.claude/skills/karpathy-guidelines)"
     ]
   }
 }
