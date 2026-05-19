@@ -1,6 +1,6 @@
 # Claude Toolkit
 
-Claude Code에서 사용하는 커맨드 + 스킬 모음.
+Claude Code에서 사용하는 커맨드 + 스킬 + 에이전트 모음.
 
 ## 구조
 
@@ -12,8 +12,11 @@ commands/
   fix.md        — 에러 분석 → 수정 → 교훈 기록
   start.md      — 새 작업 세션 시작 체크리스트
 skills/
-  init-project/ — 프로젝트 초기 세팅 (hooks, CLAUDE.md, notes/)
-  commit-push/  — 커밋 + 푸시 자동화
+  init-project/      — 프로젝트 초기 세팅 (hooks, CLAUDE.md, notes/)
+  commit-push/       — 커밋 + 푸시 자동화
+  karpathy-guidelines/ — Karpathy LLM 코딩 가이드라인
+agents/
+  python-pro.md — Python 3.12+ 타입 안전·async·테스트 커버리지 전문 에이전트
 ```
 
 ## 설치

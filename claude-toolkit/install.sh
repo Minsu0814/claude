@@ -16,7 +16,7 @@ else
 fi
 
 echo "=== Claude Toolkit 설치 ($MODE) ==="
-mkdir -p "$CLAUDE_DIR/commands" "$CLAUDE_DIR/skills"
+mkdir -p "$CLAUDE_DIR/commands" "$CLAUDE_DIR/skills" "$CLAUDE_DIR/agents"
 
 # commands 복사 (개별 파일 단위, 항상 덮어쓰기)
 for cmd in "$SCRIPT_DIR/commands"/*.md; do
@@ -24,6 +24,14 @@ for cmd in "$SCRIPT_DIR/commands"/*.md; do
   name=$(basename "$cmd")
   cp -f "$cmd" "$CLAUDE_DIR/commands/$name"
   echo "[done] commands/$name"
+done
+
+# agents 복사 (개별 파일 단위, 항상 덮어쓰기)
+for agent in "$SCRIPT_DIR/agents"/*.md; do
+  [ -f "$agent" ] || continue
+  name=$(basename "$agent")
+  cp -f "$agent" "$CLAUDE_DIR/agents/$name"
+  echo "[done] agents/$name"
 done
 
 # skills 복사 (디렉토리 단위, 기존 junction/symlink 제거 후 복사)
